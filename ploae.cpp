@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class carte {
@@ -11,25 +12,18 @@ private:
 
 
 public:
-	void init(string numes) {
-		carte numes;
+
+	void setBook(string unnume, string unautor, int unpgs) {
+		nume = unnume;
+		autor = unautor;
+		pagini = unpgs;
 
 	}
-
-	void setNume(string unNume) {
-		nume = unNume;
-
-	}
-	void setAutor(string unAutor) {
-		autor = unAutor;
-	}
-	void setPg(int nrPagini) {
-		pagini = nrPagini;
-	}
-	void print() {
-		cout << "Titlu: " << nume << endl;
-		cout << "Autor: " << autor << endl;
-		cout << "Nr pagini: " << pagini << endl;
+	void print(ofstream& fisi) {
+		fisi << "Titlu: " << nume << endl;
+		fisi << "Autor: " << autor << endl;
+		fisi << "Nr pagini: " << pagini << endl;
+		
 	}
 };
 
@@ -40,8 +34,20 @@ public:
 
 int main()
 {
+	ofstream fisier("cartsi.txt", std::ios::app);
+	string nume, autor;
+	int pgs;
+	carte book;
+	cin >> nume >> autor >> pgs;
+	book.setBook(nume, autor, pgs);
+	book.print(fisier);
 
 
+
+
+
+	fisier.close();
+	
 
 }
 
