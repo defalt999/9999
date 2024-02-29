@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 class carte {
@@ -20,10 +21,15 @@ public:
 
 	}
 	void print(ofstream& fisi) {
-		fisi << "Titlu: " << nume << endl;
-		fisi << "Autor: " << autor << endl;
-		fisi << "Nr pagini: " << pagini << endl;
+		fisi <<  nume << endl;
+		fisi << autor << endl;
+		fisi << pagini << endl;
 		
+	}
+	void consolePrint() {
+		cout <<nume <<endl;
+		cout <<autor <<endl;
+		cout <<pagini <<endl;
 	}
 };
 
@@ -34,13 +40,18 @@ public:
 
 int main()
 {
+	
 	ofstream fisier("cartsi.txt", std::ios::app);
 	string nume, autor;
 	int pgs;
+	getline(cin,nume);
+	getline(cin, autor);
+	cin >> pgs;
 	carte book;
-	cin >> nume >> autor >> pgs;
 	book.setBook(nume, autor, pgs);
 	book.print(fisier);
+	book.consolePrint();
+	
 
 
 
