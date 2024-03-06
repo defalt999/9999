@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="cartsi.txt" />
+    <Text Include="citeste.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

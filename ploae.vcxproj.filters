@@ -23,5 +23,8 @@
     <Text Include="cartsi.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="citeste.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
